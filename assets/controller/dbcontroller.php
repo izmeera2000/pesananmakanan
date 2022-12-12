@@ -42,13 +42,21 @@ class DBController
 	function uploadFOrder($query)
 	{
 
-        if (mysqli_query($this->conn, $query)) {
+		if (mysqli_query($this->conn, $query)) {
 			echo "New record created successfully";
-		  } else {
+		} else {
 			echo "Error: " . $query . "<br>" . mysqli_error($this->conn);
-		  }
+		}
 
 
+	}
+
+	function getOrder($query)
+	{
+		$result = mysqli_query($this->conn, $query);
+
+		$orders = mysqli_num_rows($result) > 0;
+		return $orders;
 	}
 }
 ?>

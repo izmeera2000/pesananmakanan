@@ -48,32 +48,53 @@ if (!empty($_GET["action"])) {
     case "empty":
       unset($_SESSION["cart_item"]);
       break;
-    case "pay":
-      foreach ($_SESSION["cart_item"] as $k) {
-        $ref = $_SESSION["ref"];
-        $tablen = $_SESSION["tablen"];
-        $t = time();
-        $t2 = date("d-m-Y", $t);
-        // echo "<script type='text/javascript'>alert('" . $ref . "');</script>";
-        // echo "<script type='text/javascript'>alert('" . $tablen . "');</script>";
-        // echo "<script type='text/javascript'>alert('" . $k["code"] . "');</script>";
-        // echo "<script type='text/javascript'>alert('" . $k["image"] . "');</script>";
-        // echo "<script type='text/javascript'>alert('" . $k["name"] . "');</script>";
-        // echo "<script type='text/javascript'>alert('" . $k["quantity"] . "');</script>";
-        // echo "<script type='text/javascript'>alert('" . date("d-m-Y",$t) . "');</script>";
 
-        $db_handle->uploadFOrder("INSERT INTO pesanan (ref,tablen,item,image,quantity,price,timedate,foodstate) VALUES ('$ref','$tablen','" . $k['code'] . "','" . $k['image'] . "', '" . $k['quantity'] . "','" . $k['price'] . "','$t2','0')");
-        
+    case "pay2":
+      $ref = $_SESSION["ref"];
+      $tablen = $_SESSION["tablen"];
+      $t = time();
+      $t2 = date("d-m-Y", $t);
+      $total_quantity = 0;
+      $total_price = 0;
+      $itemarray = array();
+      $imagearray = array();
+      $namearray = array();
+      $quantityarray = array();
+      $pricearray = array();
+
+      foreach ($_SESSION["cart_item"] as $item) {
+        $total_quantity += $item["quantity"];
+        $total_price += ($item["price"] * $item["quantity"]);
+
+        $newitem = $item["code"];
+        $newname = $item["name"];
+        $newimage = $item["image"];
+
+        $newquantity = $item["quantity"];
+        $newprice = $item["price"];
+
+        $itemarray[] = $newitem;
+        $namearray[] = $newname;
+        $imagearray[] = $newimage;
+        $quantityarray[] = $newquantity;
+        $pricearray[] = $newprice;
+
+        //item
+        //name 
+        //quantity /
+        //price
+      }
+      // echo "<script type='text/javascript'>alert('" . $row . "');</script>";
+
+      $db_handle->uploadFOrder("INSERT INTO pesanan (ref,tablen,item,name,image,quantity,tquantity,price,tprice,timedate,foodstate) 
+       VALUES ('$ref','$tablen','" . json_encode($itemarray) . "','" . json_encode($namearray) . "','" . json_encode($imagearray) . "', '" . json_encode($quantityarray) . "','" . $total_quantity . "','" . json_encode($pricearray) . "','" . $total_price . "','$t2','3')");
         unset($_SESSION["cart_item"]);
         unset($_SESSION["ref"]);
         unset($_SESSION["tablen"]);
 
         header("Location:payment.php");
-
-      }
-
-
       break;
+
   }
 }
 
@@ -254,12 +275,13 @@ if (!empty($_GET["action"])) {
             <div
               class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
 
-              <a href="cart.php?action=pay" class="btn-book-a-table">Bayar RM
+              <a href="cart.php?action=pay2" class="btn-book-a-table">Bayar RM
                 <?php echo number_format($total_price, 2) ?> Cash
               </a>
 
             </div>
             <?php
+
             } else {
             ?>
             <section id="why-us" class="why-us section">
