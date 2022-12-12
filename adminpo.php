@@ -148,7 +148,9 @@ if (!empty($_GET["tablen"])) {
                                 <?php++$quantityrow; ?>
                                 </p>
                                 <?php } ?>
-                                <h3><a href='?action="paid"&ref="<?php echo $order["ref"] ?>"'><i class="bi bi-check2"></i></a></h3>
+                                
+
+                                <h3><a href='?action="cancel"&ref="<?php echo $order["ref"] ?>"'><i class="bi bi-x-lg"></i></a> <a href='?action="paid"&ref="<?php echo $order["ref"] ?>"'><i class="bi bi-check2"></i></a></h3>
                             </div>
 
                         </div><!-- End Event item -->
