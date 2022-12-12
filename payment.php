@@ -60,37 +60,13 @@ if (!empty($_GET["tablen"])) {
       <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1>Yummy<span>.</span></h1>
+        <h1>Taiping Yong Tau Foo</h1>
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#chefs">Chefs</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i
-                class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i
-                    class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
+        <li><a href="tablenum.php#why-us">Meja</a></li>
+          <li><a href="menu.php">Menu</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -105,21 +81,18 @@ if (!empty($_GET["tablen"])) {
   <main id="main">
 
     <!-- ======= Hero Section ======= -->
-    <section id="hero" class="hero d-flex align-items-center section-bg">
+    <section id="hero" class="hero d-flex align-items-center ">
       <div class="container">
         <div class="row justify-content-between gy-5">
           <div
             class="col-lg-6 order-2 order-lg-6 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
-            <h2 data-aos="fade-up">Enjoy Your Healthy<br>Delicious Food</h2>
-            <p data-aos="fade-up" data-aos-delay="100">Sed autem laudantium dolores. Voluptatem itaque ea consequatur
-              eveniet. Eum quas beatae cumque eum quaerat.</p>
+            <h2 data-aos="fade-up">Terima Kasih</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Tunggu Sebentar</p>
           </div>
           <div class="col-lg-6 order-1 order-lg-6 text-center text-lg-start">
-          <div class="d-flex justify-content-center">
-  <div class="spinner-border" role="status">
-    <span class="sr-only"></span>
-  </div>
-</div>
+            <div class="d-flex justify-content-center">
+ 
+            </div>
           </div>
         </div>
       </div>
@@ -148,20 +121,7 @@ if (!empty($_GET["tablen"])) {
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <script type="text/javascript">
-      function table(){
-        const xhttp = new XMLHttpRequest();
-        xhttp.onload = function(){
-          document.getElementById("table").innerHTML = this.responseText;
-        }
-        xhttp.open("GET", "data.php");
-        xhttp.send();
-      }
 
-      setInterval(function(){
-        table();
-      }, 1);
-    </script>
 </body>
 
 </html>

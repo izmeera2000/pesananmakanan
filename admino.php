@@ -5,9 +5,9 @@ $db_handle = new DBController();
 
 if (!empty($_GET["action"])) {
     switch ($_GET["action"]) {
-        case "paid":
+        case "done":
 
-            $productByCode = $db_handle->updateState("UPDATE pesanan SET foodstate='0' WHERE ref='" . $_GET["ref"] . "'");
+            $productByCode = $db_handle->updateState("UPDATE pesanan SET foodstate='1' WHERE ref='" . $_GET["ref"] . "'");
             break;
         case "cancel":
 
@@ -73,8 +73,9 @@ if (!empty($_GET["action"])) {
             <nav id="navbar" class="navbar">
                 <ul>
 
-                    <li><a href="adminpo.php#events">Payment</a></li>
-                    <li><a href="admino.php">Orders</a></li>
+
+                    <li><a href="adminpo.php">Payment</a></li>
+                    <li><a href="admino.php#events">Orders</a></li>
                     <li><a href="adming.php">Records</a></li>
 
                 </ul>
@@ -99,7 +100,7 @@ if (!empty($_GET["action"])) {
                 <div class="section-header">
                     <h1></h1>
 
-                    <h1>Payment Orders</h1>
+                    <h1>Orders</h1>
                 </div>
 
                 <div class="slides-1 swiper" data-aos="fade-up" data-aos-delay="100">
@@ -108,7 +109,7 @@ if (!empty($_GET["action"])) {
 
                         <?php
 
-                        $orders = $db_handle->runQuery("SELECT * FROM pesanan WHERE foodstate=3");
+                        $orders = $db_handle->runQuery("SELECT * FROM pesanan WHERE foodstate=0");
                         if (empty($orders)) { ?>
                         <div class="swiper-slide event-item d-flex flex-column justify-content-end">
                             <div class="price align-self-start">No Orders</div>
@@ -147,7 +148,7 @@ if (!empty($_GET["action"])) {
 
                                 <h3><a href='?action=cancel&ref=<?php echo $order["ref"] ?>'><i
                                             class="bi bi-x-lg"></i></a> <a
-                                        href='?action=paid&ref=<?php echo $order["ref"] ?>'><i
+                                        href='?action=done&ref=<?php echo $order["ref"] ?>'><i
                                             class="bi bi-check2"></i></a></h3>
                             </div>
 

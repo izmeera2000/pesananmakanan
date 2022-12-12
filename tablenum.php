@@ -3,7 +3,7 @@ session_start();
 require_once("assets/controller/dbcontroller.php");
 $db_handle = new DBController();
 
-if (!empty($_GET["tablen"])){
+if (!empty($_GET["tablen"])) {
   header("Location:menu.php");
 
 }
@@ -60,37 +60,15 @@ if (!empty($_GET["tablen"])){
       <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1>Yummy<span>.</span></h1>
+        <h1>Taiping Yong Tau Foo</h1>
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#chefs">Chefs</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i
-                class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i
-                    class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="tablenum.php#why-us">Meja</a></li>
+          <li><a href="menu.php">Menu</a></li>
+
+
         </ul>
       </nav><!-- .navbar -->
 
@@ -104,37 +82,100 @@ if (!empty($_GET["tablen"])){
 
   <main id="main">
 
-    <!-- ======= Menu Section ======= -->
-    <section id="menu" class="menu">
+     <!-- ======= Why Us Section ======= -->
+     <section id="why-us" class="why-us section-bg">
       <div class="container" data-aos="fade-up">
 
+        <div class="row gy-4">
 
 
-        <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-8 d-flex align-items-center">
+            <div class="row gy-4">
 
-          <div class="tab-pane fade active show" id="menu-makanan">
+              <div class="col-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                
+                  <h3><a href="menu.php?tablen=1" class="card-link">Meja 1</a></h3>
+                </div>
+              </div><!-- End Icon Box -->
+              <div class="col-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                
+                  <h3><a href="menu.php?tablen=2" class="card-link">Meja 2</a></h3>
+                </div>
+              </div><!-- End Icon Box -->
+              <div class="col-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                
+                  <h3><a href="menu.php?tablen=3" class="card-link">Meja 3</a></h3>
+                </div>
+              </div><!-- End Icon Box -->
+              <div class="col-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                
+                  <h3><a href="menu.php?tablen=4" class="card-link">Meja 4</a></h3>
+                </div>
+              </div><!-- End Icon Box -->
 
-            <div class="tab-header text-center">
-              <h3>Meja</h3>
-              
+              <div class="col-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                
+                  <h3><a href="menu.php?tablen=5" class="card-link">Meja 5</a></h3>
+                </div>
+              </div><!-- End Icon Box -->
+              <div class="col-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                
+                  <h3><a href="menu.php?tablen=6" class="card-link">Meja 6</a></h3>
+                </div>
+              </div><!-- End Icon Box -->
 
+              <div class="col-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                
+                  <h3><a href="menu.php?tablen=7" class="card-link">Meja 7</a></h3>
+                </div>
+              </div><!-- End Icon Box -->
+              <div class="col-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                
+                  <h3><a href="menu.php?tablen=8" class="card-link">Meja 8</a></h3>
+                </div>
+              </div><!-- End Icon Box -->
+              <div class="col-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                
+                  <h3><a href="menu.php?tablen=9" class="card-link">Meja 9</a></h3>
+                </div>
+              </div><!-- End Icon Box -->
+              <div class="col-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                
+                  <h3><a href="menu.php?tablen=10" class="card-link">Meja 10</a></h3>
+                </div>
+              </div><!-- End Icon Box -->
+
+              <div class="col-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                
+                  <h3><a href="menu.php?tablen=11" class="card-link">Meja 11</a></h3>
+                </div>
+              </div><!-- End Icon Box -->
+              <div class="col-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                
+                  <h3><a href="menu.php?tablen=12" class="card-link">Meja 12</a></h3>
+                </div>
+              </div><!-- End Icon Box -->
+
+           
             </div>
-
-            <div class="row gy-5">
-
-            <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">meja 1</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="menu.php?tablen=1" class="card-link">Another link</a>
-  </div>
-</div>
-            </div>
-   
           </div>
 
-        </div><!-- End  Menu Content -->
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
 
 
 

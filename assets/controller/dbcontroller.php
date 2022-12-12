@@ -29,6 +29,8 @@ class DBController
 		}
 		if (!empty($resultset))
 			return $resultset;
+		
+
 	}
 
 	function numRows($query)
@@ -57,6 +59,12 @@ class DBController
 
 		$orders = mysqli_num_rows($result) > 0;
 		return $orders;
+	}
+
+	function updateState($query){
+
+		$result = mysqli_query($this->conn, $query);
+		return $result;
 	}
 }
 ?>
