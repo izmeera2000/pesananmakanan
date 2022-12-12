@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 10, 2022 at 08:09 PM
+-- Generation Time: Dec 12, 2022 at 12:01 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -60,23 +60,28 @@ CREATE TABLE IF NOT EXISTS `pesanan` (
   `ref` varchar(255) NOT NULL,
   `tablen` int(8) NOT NULL,
   `item` text NOT NULL,
+  `name` text NOT NULL,
   `image` text NOT NULL,
-  `quantity` int(8) NOT NULL,
-  `price` double(10,2) NOT NULL,
+  `quantity` text NOT NULL,
+  `tquantity` text NOT NULL,
+  `price` text NOT NULL,
+  `tprice` text NOT NULL,
   `timedate` text NOT NULL,
   `foodstate` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pesanan`
 --
 
-INSERT INTO `pesanan` (`id`, `ref`, `tablen`, `item`, `image`, `quantity`, `price`, `timedate`, `foodstate`) VALUES
-(1, '63948671775a3', 1, 'nasiayam1', 'assets/img/menu/menu-item-1.png', 2, 8.00, '11-12-2022', 0),
-(2, '63948671775a3', 1, 'asdasd', 'assets/img/menu/menu-item-5.png', 1, 1.00, '11-12-2022', 0),
-(3, '63948671775a3', 1, 'set a', 'assets/img/menu/menu-item-4.png', 1, 100.00, '11-12-2022', 0),
-(4, '63948671775a3', 1, 'nasiayam1', 'assets/img/menu/menu-item-1.png', 2, 8.00, '11-12-2022', 0);
+INSERT INTO `pesanan` (`id`, `ref`, `tablen`, `item`, `name`, `image`, `quantity`, `tquantity`, `price`, `tprice`, `timedate`, `foodstate`) VALUES
+(6, '639639a7c382c', 1, '[\"nasiayam1\",\"set a\"]', '[\"nasi ayam\",\"set a \"]', '[\"assets/img/menu/menu-item-1.png\",\"assets/img/menu/menu-item-4.png\"]', '[2,1]', '3', '[\"8.00\",\"100.00\"]', '116', '12-12-2022', 3),
+(7, '639639a7c382c', 1, '[\"nasiayam1\",\"set a\"]', '[\"nasi ayam\",\"set a \"]', '[\"assets/img/menu/menu-item-1.png\",\"assets/img/menu/menu-item-4.png\"]', '[2,1]', '3', '[\"8.00\",\"100.00\"]', '116', '12-12-2022', 3),
+(8, '639639a7c382c', 1, '[\"nasiayam1\",\"set a\",\"asdasd\"]', '[\"nasi ayam\",\"set a \",\"asdasd\"]', '[\"assets/img/menu/menu-item-1.png\",\"assets/img/menu/menu-item-4.png\",\"assets/img/menu/menu-item-5.png\"]', '[3,1,2]', '6', '[\"8.00\",\"100.00\",\"1.00\"]', '126', '12-12-2022', 3),
+(9, '639639a7c382c', 1, '[\"nasiayam1\",\"set a\",\"asdasd\"]', '[\"nasi ayam\",\"set a \",\"asdasd\"]', '[\"assets/img/menu/menu-item-1.png\",\"assets/img/menu/menu-item-4.png\",\"assets/img/menu/menu-item-5.png\"]', '[3,1,2]', '6', '[\"8.00\",\"100.00\",\"1.00\"]', '126', '12-12-2022', 3),
+(10, '639639a7c382c', 1, '[\"nasiayam1\",\"set a\",\"asdasd\"]', '[\"nasi ayam\",\"set a \",\"asdasd\"]', '[\"assets/img/menu/menu-item-1.png\",\"assets/img/menu/menu-item-4.png\",\"assets/img/menu/menu-item-5.png\"]', '[3,1,2]', '6', '[\"8.00\",\"100.00\",\"1.00\"]', '126', '12-12-2022', 3),
+(11, '6397158133f94', 1, '[\"nasiayam1\"]', '[\"nasi ayam\"]', '[\"assets/img/menu/menu-item-1.png\"]', '[1]', '1', '[\"8.00\"]', '8', '12-12-2022', 3);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
