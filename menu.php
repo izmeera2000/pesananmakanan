@@ -117,11 +117,8 @@ if (!empty($_GET["action"])) {
 
       <nav id="navbar" class="navbar">
         <ul>
-        <li><a href="tablenum.php">Meja</a></li>
+          <li><a href="tablenum.php">Meja</a></li>
           <li><a href="menu.php#menu">Menu</a></li>
-        </ul>
-        </li>
-        <li><a href="#contact">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -198,9 +195,9 @@ if (!empty($_GET["action"])) {
               if (!empty($product_array)) {
                 foreach ($product_array as $key => $value) {
               ?>
-              <div class="col-lg-4 col-6 menu-item">
+              <div class="col-6 menu-item">
                 <a href="menu.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
-                  <img class="menu-img img-fluid mx-auto d-block" src="<?php echo $product_array[$key]["image"]; ?>">
+                  <img class="menu-img img-fluid" src="<?php echo $product_array[$key]["image"]; ?>">
                   <h4>
                     <?php echo $product_array[$key]["name"]; ?>
                   </h4>
@@ -208,16 +205,17 @@ if (!empty($_GET["action"])) {
                     <?php echo $product_array[$key]["description"]; ?>
                   </p>
                   <p class="price">
-                    <?php echo "$" . $product_array[$key]["price"]; ?>
+                    <?php echo "RM" . $product_array[$key]["price"]; ?>
                   </p>
                 </a>
 
               </div>
-            </div>
-            <?php
+              <?php
                 }
               }
               ?>
+            </div>
+
 
           </div>
 
@@ -235,7 +233,7 @@ if (!empty($_GET["action"])) {
               if (!empty($product_array)) {
                 foreach ($product_array as $key => $value) {
               ?>
-              <div class="col-lg-4 col-6 menu-item">
+              <div class="col-lg-6 col-6 menu-item">
                 <a href="menu.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
                   <img class="menu-img img-fluid mx-auto d-block" src="<?php echo $product_array[$key]["image"]; ?>">
                   <h4>
@@ -245,16 +243,17 @@ if (!empty($_GET["action"])) {
                     <?php echo $product_array[$key]["description"]; ?>
                   </p>
                   <p class="price">
-                    <?php echo "$" . $product_array[$key]["price"]; ?>
+                    <?php echo "RM" . $product_array[$key]["price"]; ?>
                   </p>
                 </a>
 
               </div>
-            </div>
-            <?php
+              <?php
                 }
               }
               ?>
+            </div>
+
 
           </div>
 
@@ -272,7 +271,7 @@ if (!empty($_GET["action"])) {
               if (!empty($product_array)) {
                 foreach ($product_array as $key => $value) {
               ?>
-              <div class="col-lg-4 col-6 menu-item">
+              <div class="col-lg-6 col-6 menu-item">
                 <a href="menu.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
                   <img class="menu-img img-fluid mx-auto d-block" src="<?php echo $product_array[$key]["image"]; ?>">
                   <h4>
@@ -282,16 +281,17 @@ if (!empty($_GET["action"])) {
                     <?php echo $product_array[$key]["description"]; ?>
                   </p>
                   <p class="price">
-                    <?php echo "$" . $product_array[$key]["price"]; ?>
+                    <?php echo "RM" . $product_array[$key]["price"]; ?>
                   </p>
                 </a>
 
               </div>
-            </div>
-            <?php
+              <?php
                 }
               }
               ?>
+            </div>
+
 
           </div>
 

@@ -85,8 +85,10 @@ if (!empty($_GET["tablen"])) {
         <div class="row justify-content-between gy-5">
           <div
             class="col-lg-6 order-2 order-lg-6 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
-            <h2 data-aos="fade-up">Terima Kasih</h2>
-            <p data-aos="fade-up" data-aos-delay="100">Tunggu Sebentar</p>
+            <!-- <h2 data-aos="fade-up">Terima Kasih</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Tunggu Sebentar</p> -->
+            <img src="assets/img/onlinepay.jpg" class="img-fluid" alt="Responsive image">
+
           </div>
           <div class="col-lg-6 order-1 order-lg-6 text-center text-lg-start">
             <div class="d-flex justify-content-center">
