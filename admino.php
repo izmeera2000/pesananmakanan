@@ -146,10 +146,10 @@ if (!empty($_GET["action"])) {
                                 <?php } ?>
 
 
-                                <h3><a href='?action=cancel&ref=<?php echo $order["ref"] ?>'><i
+                                <!-- <h3><a href='?action=cancel&ref=<?php echo $order["ref"] ?>'><i
                                             class="bi bi-x-lg"></i></a> <a
                                         href='?action=done&ref=<?php echo $order["ref"] ?>'><i
-                                            class="bi bi-check2"></i></a></h3>
+                                            class="bi bi-check2"></i></a></h3> -->
                             </div>
 
                         </div><!-- End Event item -->

@@ -94,7 +94,7 @@ $db_handle = new DBController();
                         <?php $t = time();
                         $t2 = date("Y-m-d", $t); ?>
                         <form method="post" action="adming.php">
-                            <h3> <input type="date" name="date" placeholder="dd-mm-yyyy" value="" min="2022-12-1"
+                            <h3> <input type="date" name="date" placeholder="dd-mm-yyyy" min="2022-12-13"
                                     max="<?php echo $t2 ?>"></h3>
                             <input style="text-decoration: none;border: none;" type="submit">
                         </form>
@@ -116,12 +116,11 @@ $db_handle = new DBController();
                                 if (!empty($_POST["date"])) {
 
                                     $orgdate = $_POST["date"];
-                                    $newdate= date("d/m/Y", strtotime($orgdate));  
-                                
-                                }
-                                else {
+                                    $newdate = date("d/m/Y", strtotime($orgdate));
+
+                                } else {
                                     $t5 = time();
-                        $newdate = date("d/m/Y", $t5);
+                                    $newdate = date("d/m/Y", $t5);
                                 }
                                 $records = $db_handle->runQuery("SELECT * FROM pesanan WHERE foodstate=1 AND timedate='$newdate'");
 

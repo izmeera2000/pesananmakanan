@@ -73,7 +73,7 @@ if (!empty($_GET["action"])) {
             <nav id="navbar" class="navbar">
                 <ul>
 
-                    <li><a href="adminpo.php#events">Payment</a></li>
+                    <li><a href="adminpo.php">Payment</a></li>
                     <li><a href="admino.php">Orders</a></li>
                     <li><a href="adming.php">Records</a></li>
 

@@ -7,27 +7,6 @@ if (!empty($_GET["tablen"])) {
   header("Location:menu.php");
 
 }
-$ref = $_SESSION["ref"];
-// $payment = $db_handle->numRows("SELECT * FROM pesanan WHERE foodstate='0' AND ref='$ref'");
-// if (!empty($payment)) {
-// echo '<pre>'; print_r($payment); echo '</pre>';
-// header("Location:payment4.php");
-//  unset($_SESSION["ref"]);
-
-
-// }
-if (!empty($_GET["action"])) {
-  switch ($_GET["action"]) {
-      case "fooddone":
-
-        $productByCode = $db_handle->updateState("UPDATE pesanan SET foodstate='1' WHERE ref='" . $ref . "'");
-   
-        unset($_SESSION["ref"]);
-        header("Location:menu.php");
-        break;
- 
-  }
-}
 
 ?>
 <!DOCTYPE html>
@@ -107,18 +86,13 @@ if (!empty($_GET["action"])) {
           <div
             class="col-lg-6 order-2 order-lg-6 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
 
-            <h2 data-aos="fade-up" id="timer" style="display:none"></h2>
+            <h2 data-aos="fade-up" id="timer"></h2>
           </div>
           <div
             class="col-lg-6 order-2 order-lg-6 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
-            <div id="data"></div>
-            <div id="data2"></div>
 
-            <h2 data-aos="fade-up" id="payment1" style="display:none">Sila membuat pembayaran di kaunter</h2>
-            <h2 data-aos="fade-up" id="payment2a" style="display:none">Terima Kasih</h2>
-            <p data-aos="fade-up"   data-aos-delay="100" id="payment2b" style="display:none">Tunggu Sebentar Untuk Makanan
-            </p>
-            <a class="btn-book-a-table" style="display:none"  id="payment2c" href='?action=fooddone&ref=<?php echo $ref ?>'><i class="bi bi-check-lg"></i></a>
+            <h2 data-aos="fade-up">Terima Kasih</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Tunggu Sebentar Untuk Makanan</p>
           </div>
           <div class="col-lg-6 order-1 order-lg-6 text-center text-lg-start">
             <div class="d-flex justify-content-center">
@@ -151,85 +125,37 @@ if (!empty($_GET["action"])) {
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
-  <script type="text/javascript">
-    function table() {
-      const xhttp = new XMLHttpRequest();
-      xhttp.onload = function () {
-        // document.getElementById("data").innerHTML = this.responseText;
-        // if (document.getElementById("data").innerHTML != "") {
-        // }
-
-        if (this.responseText == "3") {
-          document.getElementById("payment1").style.display = "block";
-          document.getElementById("payment2a").style.display = "none";
-          document.getElementById("payment2b").style.display = "none";
-          document.getElementById("payment2c").style.display = "none";
-
-          document.getElementById("timer").style.display = "none";
-
-        }
-        else if (this.responseText == "0") {
-          document.getElementById("payment1").style.display = "none";
-          document.getElementById("payment2a").style.display = "block";
-          document.getElementById("payment2b").style.display = "block";
-          document.getElementById("payment2c").style.display = "block";
-
-          document.getElementById("timer").style.display = "block";
-
-
-          var now = new Date().getTime();
-
-          // Get today's date and time
-
-          // Find the distance between now and the count down date
-
-          var distance = tmin - now;
-          // Time calculations for days, hours, minutes and seconds
-          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-          // Output the result in an element with id="demo"
-          document.getElementById("timer").innerHTML = minutes + " M " + seconds + " S ";
-
-          // If the count down is over, write some text 
-          if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("timer").innerHTML = "EXPIRED";
-          }
-
-        }
-        else {
-          document.getElementById("payment1").style.display = "none";
-          document.getElementById("payment2a").style.display = "none";
-          document.getElementById("payment2b").style.display = "none";
-          document.getElementById("payment2c").style.display = "none";
-
-          document.getElementById("timer").style.display = "none";
-          document.getElementById("data").innerHTML = "not found";
-
-        }
-
-
-      }
-      xhttp.open("GET", "paymentb.php");
-      xhttp.send();
-    }
-
-    setInterval(function () {
-      table();
-    }, 1000);
-  </script>
   <script>
 
 
 
     var tmin = new Date().getTime() + 1000 * 60 * 60 / 2
 
+    var x = setInterval(function () {
+      var now = new Date().getTime();
 
+      // Get today's date and time
+
+      // Find the distance between now and the count down date
+
+      var distance = tmin - now;
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Output the result in an element with id="demo"
+      document.getElementById("timer").innerHTML = minutes + " M " + seconds + " S ";
+
+      // If the count down is over, write some text 
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "EXPIRED";
+      }
+    }, 1000);
   </script>
+
 </body>
 
 </html>

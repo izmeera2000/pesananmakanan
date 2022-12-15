@@ -89,7 +89,7 @@ if (!empty($_GET["action"])) {
       $db_handle->uploadFOrder("INSERT INTO pesanan (ref,tablen,item,name,image,quantity,tquantity,price,tprice,timedate,foodstate) 
        VALUES ('$ref','$tablen','" . json_encode($itemarray) . "','" . json_encode($namearray) . "','" . json_encode($imagearray) . "', '" . json_encode($quantityarray) . "','" . $total_quantity . "','" . json_encode($pricearray) . "','" . $total_price . "','$t2','3')");
         unset($_SESSION["cart_item"]);
-        unset($_SESSION["ref"]);
+        // unset($_SESSION["ref"]);
         unset($_SESSION["tablen"]);
 
         header("Location:payment.php");
