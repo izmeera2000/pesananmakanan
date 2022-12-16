@@ -104,58 +104,8 @@ if (!empty($_GET["action"])) {
                 </div>
 
                 <div class="slides-1 swiper" data-aos="fade-up" data-aos-delay="100">
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper" id="data4">
 
-
-                        <?php
-
-                        $orders = $db_handle->runQuery("SELECT * FROM pesanan WHERE foodstate=0");
-                        if (empty($orders)) { ?>
-                        <div class="swiper-slide event-item d-flex flex-column justify-content-end">
-                            <div class="price align-self-start">No Orders</div>
-                            <p class="description">
-                            </p>
-                        </div><!-- End Event item -->
-                        <?php
-                        } else {
-                            foreach ($orders as $order) { ?>
-
-
-                        <div class="swiper-slide event-item d-flex flex-column justify-content-end"
-                            style="background-image: url(assets/img/payment-systems.jpg)">
-                            <h3>
-                                <?php echo "Meja " . $order["tablen"] ?>
-                            </h3>
-                            <div class="price align-self-start">
-                                <?php echo "RM" . $order["tprice"] ?>
-                            </div>
-                            <div class="row">
-                                <!-- <p class="description"> <?php echo $order["name"] ?></p> -->
-
-                                <?php
-                                $namelist = json_decode($order["name"]);
-                                $quantitylist = json_decode($order["quantity"]);
-                                $quantityrow = 0;
-                                foreach ($namelist as $name) { ?>
-
-                                <p class="description">
-                                    <?php echo $name . " x " . $quantitylist[$quantityrow] ?>
-                                </p>
-                                <?php++$quantityrow; ?>
-                                </p>
-                                <?php } ?>
-
-
-                                <!-- <h3><a href='?action=cancel&ref=<?php echo $order["ref"] ?>'><i
-                                            class="bi bi-x-lg"></i></a> <a
-                                        href='?action=done&ref=<?php echo $order["ref"] ?>'><i
-                                            class="bi bi-check2"></i></a></h3> -->
-                            </div>
-
-                        </div><!-- End Event item -->
-
-                        <?php }
-                        } ?>
 
 
 
@@ -187,7 +137,26 @@ if (!empty($_GET["action"])) {
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script>
+        function table() {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function () {
+        document.getElementById("data4").innerHTML = this.responseText;
+        // if (document.getElementById("data").innerHTML != "") {
+        // }
 
+
+
+
+      }
+      xhttp.open("GET", "admino-data.php");
+      xhttp.send();
+    }
+
+    setInterval(function () {
+      table();
+    }, 1000);
+</script>
 
 </body>
 

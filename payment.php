@@ -203,12 +203,11 @@ if (!empty($_GET["action"])) {
         }
         else {
           document.getElementById("payment1").style.display = "none";
-          document.getElementById("payment2a").style.display = "none";
+          document.getElementById("payment2a").style.display = "block";
           document.getElementById("payment2b").style.display = "none";
           document.getElementById("payment2c").style.display = "none";
 
           document.getElementById("timer").style.display = "none";
-          document.getElementById("data").innerHTML = "not found";
 
         }
 
