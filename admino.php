@@ -9,6 +9,10 @@ if (!empty($_GET["action"])) {
 
             $productByCode = $db_handle->updateState("UPDATE pesanan SET foodstate='1' WHERE ref='" . $_GET["ref"] . "'");
             break;
+            case "receipt";
+
+            header("Location:rawbt-receipt.php");
+            break;
         case "cancel":
 
             $productByCode = $db_handle->updateState("UPDATE pesanan SET foodstate='2' WHERE ref='" . $_GET["ref"] . "'");

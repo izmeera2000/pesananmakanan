@@ -18,7 +18,7 @@ if (!empty($result)) {
         echo 'Meja ' . $order["tablen"];
         echo '</h3>';
         echo '<div class="price align-self-start">';
-        echo 'RM' . $order['tprice'];
+        echo 'RM' . number_format($order['tprice'], 2);
         echo '</div>';
         echo '<div class="row">';
         $namelist = json_decode($order["name"]);

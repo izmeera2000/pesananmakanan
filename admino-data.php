@@ -18,7 +18,7 @@ if (!empty($result)) {
         echo 'Meja ' . $order["tablen"];
         echo '</h3>';
         echo '<div class="price align-self-start">';
-        echo 'RM' . $order['tprice'];
+        echo 'RM' . number_format($order['tprice'], 2);
         echo '</div>';
         echo '<div class="row">';
         $namelist = json_decode($order["name"]);
@@ -30,7 +30,8 @@ if (!empty($result)) {
             echo '</p>';
             ++$quantityrow;
         }
-        // echo '<h3><a href="?action=cancel&ref=' . $order["ref"] . '"><i class="bi bi-x-lg"></i></a> ';
+        echo '<br/>';
+        echo '<h3><a href="?action=receipt&ref=' . $order["ref"] . '"><i class="bi bi-receipt-cutoff"></i></a> </h3>';
         // echo '<a href="?action=paid&ref=' . $order["ref"] . '"><i class="bi bi-check2"></i></a></h3>';
         echo '</div>';
         echo '';

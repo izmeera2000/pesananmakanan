@@ -124,6 +124,7 @@ $db_handle = new DBController();
                                 }
                                 $records = $db_handle->runQuery("SELECT * FROM pesanan WHERE foodstate=1 AND timedate='$newdate'");
 
+                                if (!empty($records)){
                                 foreach ($records as $record) {
                                     $namelist = json_decode($record["name"]);
                                     $quantitylist = json_decode($record["quantity"]);
@@ -135,7 +136,12 @@ $db_handle = new DBController();
 
                                     <td>
                                         <p class="text-left">
-                                            <?php foreach ($namelist as $name) {
+
+                                            <?php
+                                    echo '<i><b>Table ' . $record["tablen"] . '</b>: ' . $record["ref"] . '</i>';
+                                    echo '</br>';
+                                    foreach ($namelist as $name) {
+
                                         echo $name;
                                         echo '</br>';
                                     }
@@ -145,7 +151,9 @@ $db_handle = new DBController();
                                     <td>
                                         <p class="text-left">
                                             <?php
+                                    echo '</br>';
                                     foreach ($quantitylist as $quantity) {
+
                                         echo $quantity;
                                         echo '</br>';
                                     }
@@ -155,6 +163,7 @@ $db_handle = new DBController();
                                     <td>
                                         <p class="text-left">
                                             <?php
+                                    echo '</br>';
                                     foreach ($pricelist as $price) {
 
                                         echo "RM" . $price;
@@ -166,20 +175,21 @@ $db_handle = new DBController();
                                     <td>
                                         <p class="text-left">
                                             <?php
+                                    echo '</br>';
                                     echo "RM" . number_format($tprice, 2);
                                             ?>
                                         </p>
                                     </td>
                                 </tr>
-                                <?php } ?>
+                                <?php } }?>
 
 
                                 <tr>
 
 
-                                    <td colspan="3" align="right">Total:</td>
+                                    <td colspan="3" align="right"><b>Total:</b></td>
                                     <td align="left">
-                                        <?php echo "RM" . number_format($tprice2, 2) ?>
+                                        <?php echo "<b>RM" . number_format($tprice2, 2) . '</b>'?>
                                     </td>
 
 
