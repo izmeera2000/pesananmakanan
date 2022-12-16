@@ -7,6 +7,10 @@ use Mike42\Escpos\PrintConnectors\RawbtPrintConnector;
 use Mike42\Escpos\CapabilityProfile;
 
 
+if (!empty($_GET["ref"])) {
+
+}
+
 try {
     $profile = CapabilityProfile::load("POS-5890");
 
@@ -25,7 +29,7 @@ try {
     $total = new item('Total', '14.25', true);
     /* Date is kept the same for testing */
 // $date = date('l jS \of F Y h:i:s A');
-    $date = "Monday 6th of April 2015 02:56:25 PM";
+    $date = $_GET["ref"];
 
     /* Start the printer */
     $logo = EscposImage::load("assets\img\about-2.jpg", false);
@@ -91,10 +95,8 @@ try {
 
     /* Cut the receipt and open the cash drawer */
     $printer->cut();
-    $printer->pulse();
 
 } catch (Exception $e) {
-    echo $e->getMessage();
 } finally {
     $printer->close();
 }

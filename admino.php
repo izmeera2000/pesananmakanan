@@ -9,10 +9,7 @@ if (!empty($_GET["action"])) {
 
             $productByCode = $db_handle->updateState("UPDATE pesanan SET foodstate='1' WHERE ref='" . $_GET["ref"] . "'");
             break;
-            case "receipt";
 
-            header("Location:rawbt-receipt.php");
-            break;
         case "cancel":
 
             $productByCode = $db_handle->updateState("UPDATE pesanan SET foodstate='2' WHERE ref='" . $_GET["ref"] . "'");
@@ -116,10 +113,13 @@ if (!empty($_GET["action"])) {
 
 
                     </div>
+
                     <div class="swiper-pagination"></div>
                 </div>
+    
 
             </div>
+            
         </section><!-- End Events Section -->
 
     </main><!-- End #main -->
@@ -138,6 +138,7 @@ if (!empty($_GET["action"])) {
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js"></script>
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
@@ -161,7 +162,20 @@ if (!empty($_GET["action"])) {
       table();
     }, 1000);
 </script>
-
+<script>
+        // for php demo call
+        function ajax_print(url) {
+    
+         
+                $.get(url, function (data) {
+                window.location.href = data;  // main action
+                
+            }
+            )
+        
+        
+        }
+    </script>
 </body>
 
 </html>

@@ -4,9 +4,8 @@ require_once("assets/controller/dbcontroller.php");
 $db_handle = new DBController();
 
 
-
+$url = "rawbt-receipt.php";
 $result = $db_handle->runQuery("SELECT * FROM pesanan WHERE foodstate='0' ");
-
 if (!empty($result)) {
 
     foreach ($result as $order) {
@@ -31,12 +30,29 @@ if (!empty($result)) {
             ++$quantityrow;
         }
         echo '<br/>';
-        echo '<h3><a href="?action=receipt&ref=' . $order["ref"] . '"><i class="bi bi-receipt-cutoff"></i></a> </h3>';
+        // echo '<h3><a href="?action=receipt&ref=' . $order["ref"] . '"><i class="bi bi-receipt-cutoff"></i></a> </h3>';
         // echo '<a href="?action=paid&ref=' . $order["ref"] . '"><i class="bi bi-check2"></i></a></h3>';
+        echo '<h3><a onclick="';
+        echo "ajax_print('";
+        echo "rawbt-receipt.php";
+        echo '?action=receipt&ref=';
+        echo $order["ref"];
+        echo "')";
+        echo '"><i class="bi bi-receipt-cutoff"></a></h3>';
+
         echo '</div>';
         echo '';
         echo '</div>';
-    }
+        
+
+        echo '<h3><a onclick="';
+        echo "ajax_print('";
+        echo "rawbt-receipt.php";
+        echo '?action=receipt&ref=';
+        echo $order["ref"];
+        echo "')";
+        echo '"><i class="bi bi-receipt-cutoff"></a></h3>';
+    }   
 
 
 
