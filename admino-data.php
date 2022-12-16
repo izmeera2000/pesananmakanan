@@ -30,6 +30,7 @@ if (!empty($result)) {
             ++$quantityrow;
         }
         echo '<br/>';
+        
         // echo '<h3><a href="?action=receipt&ref=' . $order["ref"] . '"><i class="bi bi-receipt-cutoff"></i></a> </h3>';
         // echo '<a href="?action=paid&ref=' . $order["ref"] . '"><i class="bi bi-check2"></i></a></h3>';
         echo '<h3><a onclick="';
@@ -38,20 +39,14 @@ if (!empty($result)) {
         echo '?action=receipt&ref=';
         echo $order["ref"];
         echo "')";
-        echo '"><i class="bi bi-receipt-cutoff"></a></h3>';
+        echo '"><i class="bi bi-receipt-cutoff"></i></a></h3>';
 
         echo '</div>';
         echo '';
         echo '</div>';
         
 
-        echo '<h3><a onclick="';
-        echo "ajax_print('";
-        echo "rawbt-receipt.php";
-        echo '?action=receipt&ref=';
-        echo $order["ref"];
-        echo "')";
-        echo '"><i class="bi bi-receipt-cutoff"></a></h3>';
+
     }   
 
 
