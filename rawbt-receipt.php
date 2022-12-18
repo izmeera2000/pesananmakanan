@@ -50,8 +50,10 @@ try {
 
     /* Print top logo */
     if ($profile->getSupportsGraphics()) {
+        $printer->graphics($logo);
     }
     if ($profile->getSupportsBitImageRaster() && !$profile->getSupportsGraphics()) {
+        $printer->bitImage($logo);
 
     }
 
