@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 12, 2022 at 10:30 PM
+-- Generation Time: Dec 18, 2022 at 01:57 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -110,16 +110,36 @@ CREATE TABLE IF NOT EXISTS `pesanan` (
   `timedate` text NOT NULL,
   `foodstate` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pesanan`
 --
 
 INSERT INTO `pesanan` (`id`, `ref`, `tablen`, `item`, `name`, `image`, `quantity`, `tquantity`, `price`, `tprice`, `timedate`, `foodstate`) VALUES
-(24, '63979db5468c4', 6, '[\"nasigorengayam1\"]', '[\"Nasi Goreng Ayam\"]', '[\"assets/img/menu/makanan/nasi/nasi-goreng-ayam-removebg-preview.png\"]', '[1]', '1', '[\"6.00\"]', '6', '13/12/2022', 3),
-(25, '6397a7fad0f75', 5, '[\"nasigorengayam1\"]', '[\"Nasi Goreng Ayam\"]', '[\"assets/img/menu/makanan/nasi/nasi-goreng-ayam-removebg-preview.png\"]', '[1]', '1', '[\"6.00\"]', '6', '13/12/2022', 3),
-(23, '63978fd455988', 2, '[\"nasigorengayam1\"]', '[\"Nasi Goreng Ayam\"]', '[\"assets/img/menu/makanan/nasi/nasi-goreng-ayam-removebg-preview.png\"]', '[21]', '21', '[\"6.00\"]', '126', '13/12/2022', 3);
+(51, '639f1469182c3', 2, '[\"nasigorengayam1\",\"nasiayam1\",\"tehtarik1\"]', '[\"Nasi Goreng Ayam\",\"Nasi Ayam\",\"Teh Tarik\"]', '[\"assets/img/menu/makanan/nasi/nasi-goreng-ayam-removebg-preview.png\",\"assets/img/menu/makanan/nasi/nasi-goreng-ayam-removebg-preview.png\",\"assets/img/menu/minuman/teh_tarik-removebg-preview.png\"]', '[1,3,2]', '6', '[\"6.00\",\"6.00\",\"2.00\"]', '28', '18/12/2022', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `name`, `password`) VALUES
+(1, 'izmeera2000', 'Izme', 'a8f5f167f44f4964e6c998dee827110c');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
