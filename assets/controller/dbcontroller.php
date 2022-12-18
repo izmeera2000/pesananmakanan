@@ -1,6 +1,8 @@
 <?php
 
 date_default_timezone_set("Asia/Kuala_Lumpur");
+$errors = array();
+
 
 class DBController
 {
@@ -29,7 +31,7 @@ class DBController
 		}
 		if (!empty($resultset))
 			return $resultset;
-		
+
 
 	}
 
@@ -44,13 +46,14 @@ class DBController
 	function uploadFOrder($query)
 	{
 
-		if (mysqli_query($this->conn, $query)) {
-			echo "New record created successfully";
-		} else {
-			echo "Error: " . $query . "<br>" . mysqli_error($this->conn);
-		}
+		// if (mysqli_query($this->conn, $query)) {
+		// 	echo "New record created successfully";
+		// } else {
+		// 	echo "Error: " . $query . "<br>" . mysqli_error($this->conn);
+		// }
 
-
+		$result = mysqli_query($this->conn, $query);
+		return $result;
 	}
 
 	function getOrder($query)
@@ -61,10 +64,21 @@ class DBController
 		return $orders;
 	}
 
-	function updateState($query){
+	function updateState($query)
+	{
 
 		$result = mysqli_query($this->conn, $query);
 		return $result;
 	}
+
+	function escstring($postvar)
+	{
+
+		$resultvar = mysqli_real_escape_string($this->conn, $postvar);
+
+		return $resultvar;
+
+	}
+
 }
 ?>

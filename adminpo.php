@@ -3,6 +3,15 @@ session_start();
 require_once("assets/controller/dbcontroller.php");
 $db_handle = new DBController();
 
+if (!isset($_SESSION['username'])){
+    header('location: adminlgn.php');
+}
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: adminlgn.php");
+}
+
 if (!empty($_GET["action"])) {
     switch ($_GET["action"]) {
         case "paid":
@@ -72,10 +81,11 @@ if (!empty($_GET["action"])) {
 
             <nav id="navbar" class="navbar">
                 <ul>
-
+                    <li><a ><?php echo $_SESSION['username'] ?></a></li>
                     <li><a href="adminpo.php#events">Payment</a></li>
                     <li><a href="admino.php">Orders</a></li>
                     <li><a href="adming.php">Records</a></li>
+                    <li> <a href="?logout='1'">Logout</a></li>
 
                 </ul>
             </nav><!-- .navbar -->
