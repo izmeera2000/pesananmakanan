@@ -152,7 +152,6 @@ if (!empty($_GET["action"])) {
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
   <script type="text/javascript">
     function table() {
       const xhttp = new XMLHttpRequest();
@@ -185,8 +184,12 @@ if (!empty($_GET["action"])) {
           // Output the result in an element with id="demo"
           document.getElementById("timer").innerHTML = minutes + " M " + seconds + " S ";
 
-          if (minutes == 25 && seconds == 00) {
-            alert("Sila bayar di kaunter");
+          if (minutes == 29 && seconds == 56) {
+   
+              alert("Sila bayar di kaunter");
+              navigator.vibrate([500, 300, 100]);
+
+
           }
 
           // If the count down is over, write some text 

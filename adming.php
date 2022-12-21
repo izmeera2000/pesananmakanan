@@ -73,6 +73,8 @@ if (isset($_GET['logout'])) {
                     <li><a href="adminpo.php">Payment</a></li>
                     <li><a href="admino.php">Orders</a></li>
                     <li><a href="adming.php#hero">Records</a></li>
+                    <li><a href="adminqr.php">QR Code</a></li>
+
                     <li> <a href="?logout='1'">Logout</a></li>
 
                 </ul>

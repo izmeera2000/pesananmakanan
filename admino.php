@@ -87,6 +87,8 @@ if (!empty($_GET["action"])) {
                     <li><a href="adminpo.php">Payment</a></li>
                     <li><a href="admino.php#events">Orders</a></li>
                     <li><a href="adming.php">Records</a></li>
+                    <li><a href="adminqr.php">QR Code</a></li>
+
                     <li> <a href="?logout='1'">Logout</a></li>
 
                 </ul>
