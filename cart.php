@@ -303,14 +303,7 @@ if (!empty($_GET["action"])) {
               </a>
 
             </div>
-            <div
-              class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
 
-              <a href="cart.php?action=pay3" class="btn-book-a-table">Bayar RM
-                <?php echo number_format($total_price, 2) ?> Online
-              </a>
-
-            </div>
             <?php
 
             } else {

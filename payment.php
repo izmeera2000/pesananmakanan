@@ -12,20 +12,20 @@ $ref = $_SESSION["ref"];
 // if (!empty($payment)) {
 // echo '<pre>'; print_r($payment); echo '</pre>';
 // header("Location:payment4.php");
-//  unset($_SESSION["ref"]);
+
 
 
 // }
 if (!empty($_GET["action"])) {
   switch ($_GET["action"]) {
-      case "fooddone":
+    case "fooddone":
 
-        $productByCode = $db_handle->updateState("UPDATE pesanan SET foodstate='1' WHERE ref='" . $ref . "'");
-   
-        unset($_SESSION["ref"]);
-        header("Location:menu.php");
-        break;
- 
+      $productByCode = $db_handle->updateState("UPDATE pesanan SET foodstate='1' WHERE ref='" . $ref . "'");
+
+      unset($_SESSION["ref"]);
+      header("Location:menu.php");
+      break;
+
   }
 }
 
@@ -116,9 +116,10 @@ if (!empty($_GET["action"])) {
 
             <h2 data-aos="fade-up" id="payment1" style="display:none">Sila membuat pembayaran di kaunter</h2>
             <h2 data-aos="fade-up" id="payment2a" style="display:none">Terima Kasih</h2>
-            <p data-aos="fade-up"   data-aos-delay="100" id="payment2b" style="display:none">Tunggu Sebentar Untuk Makanan
+            <p data-aos="fade-up" data-aos-delay="100" id="payment2b" style="display:none">Tunggu Sebentar Untuk Makanan
             </p>
-            <a class="btn-book-a-table" style="display:none"  id="payment2c" href='?action=fooddone&ref=<?php echo $ref ?>'><i class="bi bi-check-lg"></i></a>
+            <a class="btn-book-a-table" style="display:none" id="payment2c"
+              href='?action=fooddone&ref=<?php echo $ref ?>'><i class="bi bi-check-lg"></i></a>
           </div>
           <div class="col-lg-6 order-1 order-lg-6 text-center text-lg-start">
             <div class="d-flex justify-content-center">
@@ -168,6 +169,33 @@ if (!empty($_GET["action"])) {
 
           document.getElementById("timer").style.display = "none";
 
+          var now = new Date().getTime();
+
+          // Get today's date and time
+
+          // Find the distance between now and the count down date
+
+          var distance = tmin - now;
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          // Output the result in an element with id="demo"
+          document.getElementById("timer").innerHTML = minutes + " M " + seconds + " S ";
+
+          if (minutes == 25 && seconds == 00) {
+            alert("Sila bayar di kaunter");
+          }
+
+          // If the count down is over, write some text 
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("timer").innerHTML = "EXPIRED";
+          }
+
+
         }
         else if (this.responseText == "0") {
           document.getElementById("payment1").style.display = "none";
@@ -193,6 +221,7 @@ if (!empty($_GET["action"])) {
 
           // Output the result in an element with id="demo"
           document.getElementById("timer").innerHTML = minutes + " M " + seconds + " S ";
+
 
           // If the count down is over, write some text 
           if (distance < 0) {

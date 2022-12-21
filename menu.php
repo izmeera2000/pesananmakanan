@@ -11,6 +11,12 @@ if (empty($_SESSION["tablen"])) {
   }
 
 }
+else{
+  if (!empty($_GET["tablen"])) {
+    $_SESSION["tablen"] = $_GET["tablen"];
+  } 
+}
+
 
 
 if (!empty($_SESSION["ref"])) {
