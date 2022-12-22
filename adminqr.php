@@ -101,20 +101,28 @@ if (!empty($_POST['tablen'])) {
     <main id="main">
 
 
-        <!-- ======= Menu Section ======= -->
-        <section id="hero" class="hero d-flex align-items-center section-bg">
-            <div class="container">
-                <div class="row justify-content-between gy-5">
-                    <form method="post" action="adminqr">
 
-                        <div
-                            class="col-lg-5 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
-                            <h2 data-aos="fade-up" data-aos-delay="100">QR Code</h2>
 
-                        <img src="adminqr-data.php" class="img-fluid" alt="qrcode" data-aos="zoom-out"
-                            data-aos-delay="300">
+            <!-- ======= Book A Table Section ======= -->
+    <section id="book-a-table" class="book-a-table">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>QR Code</h2>
+          <p>Sila masukkan <span>Nombor Meja</span></p>
+        </div>
+
+        <div class="row g-0">
+
+        <div class="col-lg-12 mx-auto"  data-aos="zoom-out" data-aos-delay="200">
+          <img src="adminqr-data.php" class="img-fluid mx-auto d-block"   onerror="this.onerror=null;this.src='assets/img/what.png';" >
                             
-                            <select class="my-3" name="tablen" id="tablen" data-aos="fade-up" data-aos-delay="100"
+          </div>
+
+            <form action="adminqr" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+              <div class="row gy-4">
+    
+                <select class="my-4" name="tablen" id="tablen" data-aos="fade-up" data-aos-delay="100"
                                 style="  padding: 12px 15px;
     border-radius: 0;
   box-shadow: none;
@@ -134,18 +142,14 @@ if (!empty($_POST['tablen'])) {
                                 <option value="12">12</option>
 
                             </select>
+              <div class="text-center"><button type="submit">Book a Table</button></div>
+            </form>
+        
 
+        </div>
 
-                            <div  data-aos="fade-up" data-aos-delay="200">
-                                <input class="btn-book-a-table" type="submit" style="border:none;outline:none;">
-
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section><!-- End Hero Section -->
-
+      </div>
+    </section><!-- End Book A Table Section -->
 
         <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
                 class="bi bi-arrow-up-short"></i></a>
