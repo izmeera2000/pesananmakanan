@@ -8,6 +8,8 @@ if (!empty($_GET["tablen"])) {
 
 }
 $ref = $_SESSION["ref"];
+
+
 // $payment = $db_handle->numRows("SELECT * FROM pesanan WHERE foodstate='0' AND ref='$ref'");
 // if (!empty($payment)) {
 // echo '<pre>'; print_r($payment); echo '</pre>';
@@ -78,21 +80,22 @@ if (!empty($_GET["action"])) {
   <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+      <a  class="logo d-flex align-items-center me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1>Taiping Yong Tau Foo</h1>
       </a>
 
-      <nav id="navbar" class="navbar">
+      <!-- <nav id="navbar" class="navbar">
         <ul>
           <li><a href="tablenum.php">Meja</a></li>
         </ul>
-      </nav><!-- .navbar -->
+      </nav> -->
+      <!-- .navbar -->
 
-
+<!-- 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i> -->
 
     </div>
   </header><!-- End Header -->
