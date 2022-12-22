@@ -17,7 +17,7 @@ if (isset($_GET['logout'])) {
 if (!empty($_POST['tablen'])) {
     $_SESSION['qrtable'] = $_POST["tablen"];
 } else {
-    $_SESSION['qrtable'] = 'empty';
+    $_SESSION['qrtable'] = '';
 }
 
 ?>
@@ -136,7 +136,7 @@ if (!empty($_POST['tablen'])) {
                             </select>
 
 
-                            <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+                            <div  data-aos="fade-up" data-aos-delay="200">
                                 <input class="btn-book-a-table" type="submit" style="border:none;outline:none;">
 
                             </div>
