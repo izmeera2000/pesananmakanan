@@ -126,17 +126,17 @@ if (isset($_POST['rgt'])) {
               <div class="row gy-4">
                 <?php include('errors.php'); ?>
                 <div class="col-lg-12 col-md-12">
-                  <input type="text" name="username" class="form-control"  placeholder="Username">
+                  <input type="text" name="username" class="form-control"  placeholder="Username" required>
                 </div>
                 <div class="col-lg-12 col-md-12">
-                  <input type="text" name="name" class="form-control"  placeholder="Name">
+                  <input type="text" name="name" class="form-control"  placeholder="Name" required>
                 </div>
                 <div class="col-lg-12 col-md-12">
-                  <input type="password" name="password_1" class="form-control"  placeholder="Password">
+                  <input type="password" name="password_1" class="form-control"  placeholder="Password" required>
                 </div>
                 <div class="col-lg-12 col-md-12">
                   <input type="password" name="password_2" class="form-control" 
-                    placeholder="Confirm Password">
+                    placeholder="Confirm Password" required>
                 </div>
               </div>
 

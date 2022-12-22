@@ -114,11 +114,13 @@ if (isset($_POST['lgn'])) {
             <form action="adminlgn.php" method="post" role="form" class="php-email-form" data-aos="fade-up"
               data-aos-delay="100">
               <div class="row gy-4">
+              <?php include('errors.php'); ?>
+
                 <div class="col-lg-12 col-md-12">
-                  <input type="text" name="username" class="form-control" id="username" placeholder="Username">
+                  <input type="text" name="username" class="form-control" id="username" placeholder="Username" required>
                 </div>
                 <div class="col-lg-12 col-md-12">
-                  <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                  <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
                 </div>
 
               </div>
