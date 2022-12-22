@@ -50,9 +50,13 @@ try {
 
     /* Print top logo */
     if ($profile->getSupportsGraphics()) {
+        $printer->setJustification(Printer::JUSTIFY_CENTER);
+
         $printer->graphics($logo);
     }
     if ($profile->getSupportsBitImageRaster() && !$profile->getSupportsGraphics()) {
+        $printer->setJustification(Printer::JUSTIFY_CENTER);
+
         $printer->bitImage($logo);
 
     }

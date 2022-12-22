@@ -298,8 +298,8 @@ if (!empty($_GET["action"])) {
             <div
               class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
 
-              <a href="cart.php?action=pay2" class="btn-book-a-table">Bayar RM
-                <?php echo number_format($total_price, 2) ?> Cash
+              <a href="cart.php?action=pay2" class="btn-book-a-table">Cash RM
+                <?php echo number_format($total_price, 2) ?> 
               </a>
 
             </div>

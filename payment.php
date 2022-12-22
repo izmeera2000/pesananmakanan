@@ -114,7 +114,7 @@ if (!empty($_GET["action"])) {
             <div id="data"></div>
             <div id="data2"></div>
 
-            <h2 data-aos="fade-up" id="payment1" style="display:none">Sila membuat pembayaran di kaunter</h2>
+            <h2 data-aos="fade-up" id="payment1" style="display:none">Sila buat pembayaran di kaunter</h2>
             <h2 data-aos="fade-up" id="payment2a" style="display:none">Terima Kasih</h2>
             <p data-aos="fade-up" data-aos-delay="100" id="payment2b" style="display:none">Tunggu Sebentar Untuk Makanan
             </p>
@@ -184,9 +184,9 @@ if (!empty($_GET["action"])) {
           // Output the result in an element with id="demo"
           document.getElementById("timer").innerHTML = minutes + " M " + seconds + " S ";
 
-          if (minutes == 29 && seconds == 56) {
+          if (minutes == 25 && seconds == 00) {
    
-              alert("Sila bayar di kaunter");
+              alert("Sila buat pembayaran di kaunter");
               navigator.vibrate([500, 300, 100]);
 
 
