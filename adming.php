@@ -3,7 +3,7 @@ session_start();
 require_once("assets/controller/dbcontroller.php");
 $db_handle = new DBController();
 
-if (!isset($_SESSION['username'])){
+if (!isset($_SESSION['username'])) {
     header('location: adminlgn.php');
 }
 if (isset($_GET['logout'])) {
@@ -60,7 +60,7 @@ if (isset($_GET['logout'])) {
     <header id="header" class="header fixed-top d-flex align-items-center">
         <div class="container d-flex align-items-center justify-content-between">
 
-            <a  class="logo d-flex align-items-center me-auto me-lg-0">
+            <a class="logo d-flex align-items-center me-auto me-lg-0">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
                 <!-- <img src="assets/img/logo.png" alt=""> -->
                 <h1>Taiping Yong Tau Foo</h1>
@@ -69,7 +69,7 @@ if (isset($_GET['logout'])) {
             <nav id="navbar" class="navbar">
                 <ul>
 
-                    <li><a ><?php echo $_SESSION['username'] ?></a></li>    
+                    <li><a><?php echo $_SESSION['username'] ?></a></li>
                     <li><a href="adminpo.php">Payment</a></li>
                     <li><a href="admino.php">Orders</a></li>
                     <li><a href="adming.php#hero">Records</a></li>
@@ -116,7 +116,7 @@ if (isset($_GET['logout'])) {
                             <tbody>
                                 <thead>
                                     <th class="text-left">Name</th>
-                                    <th class="text-left">Quantity</th>
+                                    <th class="text-center">Qty</th>
                                     <th class="text-left">Unit Price</th>
                                     <th class="text-left">Total Price</th>
                                 </thead>
@@ -134,42 +134,49 @@ if (isset($_GET['logout'])) {
                                 }
                                 $records = $db_handle->runQuery("SELECT * FROM pesanan WHERE timedate='$newdate'");
 
-                                if (!empty($records)){
-                                foreach ($records as $record) {
-                                    $namelist = json_decode($record["name"]);
-                                    $quantitylist = json_decode($record["quantity"]);
-                                    $pricelist = json_decode($record["price"]);
-                                    $tprice = $record["tprice"];
-                                    $tprice2 = $tprice2 + $tprice;
-                                    ?>                       
+                                if (!empty($records)) {
+                                    foreach ($records as $record) {
+                                        $namelist = json_decode($record["name"]);
+                                        $quantitylist = json_decode($record["quantity"]);
+                                        $pricelist = json_decode($record["price"]);
+                                        $tprice = $record["tprice"];
+                                        $tprice2 = $tprice2 + $tprice;
+                                ?>
 
 
-                                     <?php   if ($record["foodstate"] == 0) { ?>
-                               
-                                <tr class="alert alert-dark">
+
+                                <?php if ($record["foodstate"] == 0) { ?>
+
+                                <tr class="alert alert-warning">
 
                                     <td>
-                                        <p class="text-left">
+                                        <p class="text-left text-nowrap">
 
                                             <?php
-                                            echo '<i><b>Table ' . $record["tablen"] . '</b>: ' . $record["ref"] . '</i>';
+                                            echo '<i><b>Table ' . $record["tablen"] . '</b>:</br> ' . $record["ref"] . '</i>';
                                             echo '</br>';
                                             foreach ($namelist as $name) {
 
                                                 echo $name;
                                                 echo '</br>';
+
+
                                             }
                                             ?>
+
                                         </p>
                                     </td>
                                     <td>
-                                        <p class="text-left">
+                                        <p class="text-center">
                                             <?php
                                             echo '</br>';
+                                            echo '</br>';
+
                                             foreach ($quantitylist as $quantity) {
 
                                                 echo $quantity;
                                                 echo '</br>';
+
                                             }
                                             ?>
                                         </p>
@@ -178,10 +185,13 @@ if (isset($_GET['logout'])) {
                                         <p class="text-left">
                                             <?php
                                             echo '</br>';
+                                            echo '</br>';
+
                                             foreach ($pricelist as $price) {
 
                                                 echo "RM" . $price;
                                                 echo '</br>';
+
                                             }
                                             ?>
                                         </p>
@@ -190,176 +200,206 @@ if (isset($_GET['logout'])) {
                                         <p class="text-left">
                                             <?php
                                             echo '</br>';
+                                            echo '</br>';
+
                                             echo "RM" . number_format($tprice, 2);
                                             ?>
                                         </p>
                                     </td>
                                 </tr>
-                               <?php  } ?>
+                                <?php } ?>
+                                <?php if ($record["foodstate"] == 1) { ?>
 
-                               <?php   if ($record["foodstate"] == 1) { ?>
-                               
-                               <tr class="alert alert-success">
+                                <tr class="alert alert-success">
 
-                                   <td>
-                                       <p class="text-left">
+                                    <td>
+                                        <p class="text-left text-nowrap">
 
-                                           <?php
-                                           echo '<i><b>Table ' . $record["tablen"] . '</b>: ' . $record["ref"] . '</i>';
-                                           echo '</br>';
-                                           foreach ($namelist as $name) {
+                                            <?php
+                                            echo '<i><b>Table ' . $record["tablen"] . '</b>:</br> ' . $record["ref"] . '</i>';
+                                            echo '</br>';
+                                            foreach ($namelist as $name) {
 
-                                               echo $name;
-                                               echo '</br>';
-                                               echo '</br>';
+                                                echo $name;
+                                                echo '</br>';
 
-                                           }
-                                           ?>
-                                           
-                                       </p>
-                                   </td>
-                                   <td>
-                                       <p class="text-left">
-                                           <?php
-                                           echo '</br>';
-                                           foreach ($quantitylist as $quantity) {
 
-                                               echo $quantity;
-                                               echo '</br>';
-                                           }
-                                           ?>
-                                       </p>
-                                   </td>
-                                   <td>
-                                       <p class="text-left">
-                                           <?php
-                                           echo '</br>';
-                                           foreach ($pricelist as $price) {
+                                            }
+                                            ?>
 
-                                               echo "RM" . $price;
-                                               echo '</br>';
-                                           }
-                                           ?>
-                                       </p>
-                                   </td>
-                                   <td>
-                                       <p class="text-left">
-                                           <?php
-                                           echo '</br>';
-                                           echo "RM" . number_format($tprice, 2);
-                                           ?>
-                                       </p>
-                                   </td>
-                               </tr>
-                              <?php  } ?>
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p class="text-center">
+                                            <?php
+                                            echo '</br>';
+                                            echo '</br>';
 
-                              <?php   if ($record["foodstate"] == 2) { ?>
-                               
-                               <tr class="alert alert-danger">
+                                            foreach ($quantitylist as $quantity) {
 
-                                   <td>
-                                       <p class="text-left">
+                                                echo $quantity;
+                                                echo '</br>';
 
-                                           <?php
-                                           echo '<i><b>Table ' . $record["tablen"] . '</b>: ' . $record["ref"] . '</i>';
-                                           echo '</br>';
-                                           foreach ($namelist as $name) {
+                                            }
+                                            ?>
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p class="text-left">
+                                            <?php
+                                            echo '</br>';
+                                            echo '</br>';
 
-                                               echo $name;
-                                               echo '</br>';
-                                           }
-                                           ?>
-                                       </p>
-                                   </td>
-                                   <td>
-                                       <p class="text-left">
-                                           <?php
-                                           echo '</br>';
-                                           foreach ($quantitylist as $quantity) {
+                                            foreach ($pricelist as $price) {
 
-                                               echo $quantity;
-                                               echo '</br>';
-                                           }
-                                           ?>
-                                       </p>
-                                   </td>
-                                   <td>
-                                       <p class="text-left">
-                                           <?php
-                                           echo '</br>';
-                                           foreach ($pricelist as $price) {
+                                                echo "RM" . $price;
+                                                echo '</br>';
 
-                                               echo "RM" . $price;
-                                               echo '</br>';
-                                           }
-                                           ?>
-                                       </p>
-                                   </td>
-                                   <td>
-                                       <p class="text-left">
-                                           <?php
-                                           echo '</br>';
-                                           echo "RM" . number_format($tprice, 2);
-                                           ?>
-                                       </p>
-                                   </td>
-                               </tr>
-                              <?php  } ?>
+                                            }
+                                            ?>
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p class="text-left">
+                                            <?php
+                                            echo '</br>';
+                                            echo '</br>';
 
-                              <?php   if ($record["foodstate"] == 3) { ?>
-                               
-                               <tr class="alert alert-warning">
+                                            echo "RM" . number_format($tprice, 2);
+                                            ?>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                <?php if ($record["foodstate"] == 2) { ?>
 
-                                   <td>
-                                       <p class="text-left">
+                                <tr class="alert alert-danger">
 
-                                           <?php
-                                           echo '<i><b>Table ' . $record["tablen"] . '</b>: ' . $record["ref"] . '</i>';
-                                           echo '</br>';
-                                           foreach ($namelist as $name) {
+                                    <td>
+                                        <p class="text-left text-nowrap">
 
-                                               echo $name;
-                                               echo '</br>';
-                                           }
-                                           ?>
-                                       </p>
-                                   </td>
-                                   <td>
-                                       <p class="text-left">
-                                           <?php
-                                           echo '</br>';
-                                           foreach ($quantitylist as $quantity) {
+                                            <?php
+                                            echo '<i><b>Table ' . $record["tablen"] . '</b>:</br> ' . $record["ref"] . '</i>';
+                                            echo '</br>';
+                                            foreach ($namelist as $name) {
 
-                                               echo $quantity;
-                                               echo '</br>';
-                                           }
-                                           ?>
-                                       </p>
-                                   </td>
-                                   <td>
-                                       <p class="text-left">
-                                           <?php
-                                           echo '</br>';
-                                           foreach ($pricelist as $price) {
+                                                echo $name;
+                                                echo '</br>';
 
-                                               echo "RM" . $price;
-                                               echo '</br>';
-                                           }
-                                           ?>
-                                       </p>
-                                   </td>
-                                   <td>
-                                       <p class="text-left">
-                                           <?php
-                                           echo '</br>';
-                                           echo "RM" . number_format($tprice, 2);
-                                           ?>
-                                       </p>
-                                   </td>
-                               </tr>
-                              <?php  } ?>
-                              
-                              <?php } }?>
+
+                                            }
+                                ?>
+
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p class="text-center">
+                                            <?php
+                                            echo '</br>';
+                                            echo '</br>';
+
+                                            foreach ($quantitylist as $quantity) {
+
+                                                echo $quantity;
+                                                echo '</br>';
+
+                                            }
+                                ?>
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p class="text-left">
+                                            <?php
+                                            echo '</br>';
+                                            echo '</br>';
+
+                                            foreach ($pricelist as $price) {
+
+                                                echo "RM" . $price;
+                                                echo '</br>';
+
+                                            }
+                                ?>
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p class="text-left">
+                                            <?php
+                                            echo '</br>';
+                                            echo '</br>';
+
+                                            echo "RM" . number_format($tprice, 2);
+                                ?>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                <?php if ($record["foodstate"] == 3) { ?>
+
+                                <tr class="alert alert-dark">
+
+                                    <td>
+                                        <p class="text-left text-nowrap">
+
+                                            <?php
+                                            echo '<i><b>Table ' . $record["tablen"] . '</b>:</br> ' . $record["ref"] . '</i>';
+                                            echo '</br>';
+                                            foreach ($namelist as $name) {
+
+                                                echo $name;
+                                                echo '</br>';
+
+
+                                            }
+                                ?>
+
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p class="text-center">
+                                            <?php
+                                            echo '</br>';
+                                            echo '</br>';
+
+                                            foreach ($quantitylist as $quantity) {
+
+                                                echo $quantity;
+                                                echo '</br>';
+
+                                            }
+                                ?>
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p class="text-left">
+                                            <?php
+                                            echo '</br>';
+                                            echo '</br>';
+
+                                            foreach ($pricelist as $price) {
+
+                                                echo "RM" . $price;
+                                                echo '</br>';
+
+                                            }
+                                ?>
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p class="text-left">
+                                            <?php
+                                            echo '</br>';
+                                            echo '</br>';
+
+                                            echo "RM" . number_format($tprice, 2);
+                                ?>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+
+                                <?php }
+                                } ?>
 
 
                                 <tr>
@@ -367,7 +407,7 @@ if (isset($_GET['logout'])) {
 
                                     <td colspan="3" align="right"><b>Total:</b></td>
                                     <td align="left">
-                                        <?php echo "<b>RM" . number_format($tprice2, 2) . '</b>'?>
+                                        <?php echo "<b>RM" . number_format($tprice2, 2) . '</b>' ?>
                                     </td>
 
 
