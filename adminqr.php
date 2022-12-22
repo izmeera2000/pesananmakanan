@@ -105,16 +105,15 @@ if (!empty($_POST['tablen'])) {
         <section id="hero" class="hero d-flex align-items-center section-bg">
             <div class="container">
                 <div class="row justify-content-between gy-5">
-
-                    <div class="col-lg-5   text-center text-lg-start">
-                        <h2 data-aos="fade-up" data-aos-delay="100">QR Code</h2>
-
-                        <img src="adminqr-data.php" class="img-fluid" alt="qrcode" data-aos="zoom-out" data-aos-delay="300">
-                    </div>
                     <form method="post" action="adminqr">
 
                         <div
                             class="col-lg-5 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
+                            <h2 data-aos="fade-up" data-aos-delay="100">QR Code</h2>
+
+                        <img src="adminqr-data.php" class="img-fluid" alt="qrcode" data-aos="zoom-out"
+                            data-aos-delay="300">
+                            
                             <select class="my-3" name="tablen" id="tablen" data-aos="fade-up" data-aos-delay="100"
                                 style="  padding: 12px 15px;
     border-radius: 0;
