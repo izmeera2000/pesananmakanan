@@ -3,7 +3,7 @@ session_start();
 require_once("assets/controller/dbcontroller.php");
 $db_handle = new DBController();
 
-if (!isset($_SESSION['username'])){
+if (!isset($_SESSION['username'])) {
     header('location: adminlgn.php');
 }
 if (isset($_GET['logout'])) {
@@ -74,7 +74,7 @@ if (!empty($_GET["action"])) {
     <header id="header" class="header fixed-top d-flex align-items-center">
         <div class="container d-flex align-items-center justify-content-between">
 
-            <a  class="logo d-flex align-items-center me-auto me-lg-0">
+            <a class="logo d-flex align-items-center me-auto me-lg-0">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
                 <!-- <img src="assets/img/logo.png" alt=""> -->
                 <h1>Taiping Yong Tau Foo</h1>
@@ -83,7 +83,7 @@ if (!empty($_GET["action"])) {
             <nav id="navbar" class="navbar">
                 <ul>
 
-                    <li><a ><?php echo $_SESSION['username'] ?></a></li>
+                    <li><a><?php echo $_SESSION['username'] ?></a></li>
                     <li><a href="adminpo.php">Payment</a></li>
                     <li><a href="admino.php#events">Orders</a></li>
                     <li><a href="adming.php">Records</a></li>
@@ -125,13 +125,12 @@ if (!empty($_GET["action"])) {
 
 
                     </div>
-
                     <div class="swiper-pagination"></div>
                 </div>
-    
+
 
             </div>
-            
+
         </section><!-- End Events Section -->
 
     </main><!-- End #main -->
@@ -156,36 +155,51 @@ if (!empty($_GET["action"])) {
     <script src="assets/js/main.js"></script>
     <script>
         function table() {
-      const xhttp = new XMLHttpRequest();
-      xhttp.onload = function () {
-        document.getElementById("data4").innerHTML = this.responseText;
-        // if (document.getElementById("data").innerHTML != "") {
-        // }
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                document.getElementById("data4").innerHTML = this.responseText;
 
 
 
+                new Swiper('.slides-1', {
+                    speed: 600,
+                    loop: false,
+                    autoplay: false,
+                    slidesPerView: 'auto',
+                    pagination: {
+                        el: '.swiper-pagination',
+                        type: 'bullets',
+                        clickable: true
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    }
+                });
 
-      }
-      xhttp.open("GET", "admino-data.php");
-      xhttp.send();
-    }
+            }
+            xhttp.open("GET", "admino-data.php");
+            xhttp.send();
+        }
 
-    setInterval(function () {
-      table();
-    }, 1000);
-</script>
-<script>
-        // for php demo call
+        setInterval(function () {
+            table();
+        }, 1000);
+
+
+    </script>
+
+    <script>
         function ajax_print(url) {
-    
-         
-                $.get(url, function (data) {
-                window.location.href = data;  // main action
-                
+
+
+            $.get(url, function (data) {
+                window.location.href = data;
+
             }
             )
-        
-        
+
+
         }
     </script>
 </body>

@@ -30,10 +30,15 @@ if (!empty($result)) {
             echo '</p>';
             ++$quantityrow;
         }
-        echo '<h3><a href="?action=cancel&ref=' . $order["ref"] . '"><i class="bi bi-x-lg"></i></a> ';
-        echo '<a href="?action=paid&ref=' . $order["ref"] . '"><i class="bi bi-check2"></i></a></h3>';
+        echo '<div class="col-6 mt-3 text-center">';
+        echo '<h3 style="font-size: 36px;"><a  href="?action=cancel&ref=' . $order["ref"] . '"><i class="bi bi-x-lg"></i></a></h3> ';
         echo '</div>';
-        echo '';
+
+        echo '<div class="col-6 mt-3 text-center">';
+        echo '<h3 style="font-size: 36px;"><a href="?action=paid&ref=' . $order["ref"] . '"><i class="bi bi-check2"></i></i></a></h3>';        
+        echo '</div>';
+
+        echo '</div>';
         echo '</div>';
     }
 

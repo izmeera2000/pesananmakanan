@@ -1077,6 +1077,15 @@ section {
   position: relative;
 }
 
+.action {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #fff;
+  position: relative;
+}
+
+
 .events .event-item .price {
   color: #fff;
   border-bottom: 2px solid var(--color-primary);
