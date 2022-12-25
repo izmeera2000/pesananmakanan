@@ -225,7 +225,7 @@ if (!empty($_GET["action"])) {
 
           </div>
 
-          <div class="tab-pane fade active" id="menu-minuman">
+          <div class="tab-pane fade " id="menu-minuman">
 
             <div class="tab-header text-center">
               <p>Menu</p>
@@ -263,7 +263,7 @@ if (!empty($_GET["action"])) {
 
           </div>
 
-          <div class="tab-pane fade active" id="menu-ytf">
+          <div class="tab-pane fade " id="menu-ytf">
 
             <div class="tab-header text-center">
               <p>Menu</p>

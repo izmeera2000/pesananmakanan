@@ -23,7 +23,7 @@ if (isset($_GET['logout'])) {
     <meta content="" name="description">
     <meta content="" name="keywords">
     <meta name="theme-color" content="#db4938" />
-    <link rel="manifest" href="manifest.json" />
+    <link rel="manifest" href="adminmanifest.json" />
 
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
@@ -197,7 +197,6 @@ if (isset($_GET['logout'])) {
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>

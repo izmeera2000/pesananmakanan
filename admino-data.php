@@ -36,7 +36,7 @@ if (!empty($result)) {
         // echo '<a href="?action=paid&ref=' . $order["ref"] . '"><i class="bi bi-check2"></i></a></h3>';
         
         echo '<div class="col-12 mt-3 text-center">';
-        echo '<h3 style="font-size: 36px;"><a href="" onclick="';
+        echo '<h3 style="font-size: 36px;"><a  onclick="';
         echo "ajax_print('";
         echo "rawbt-receipt.php";
         echo '?action=receipt&ref=';

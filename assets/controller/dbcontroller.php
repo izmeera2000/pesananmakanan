@@ -6,6 +6,12 @@ $errors = array();
 
 class DBController
 {
+	// private $host = "localhost";
+	// private $user = "id20052762_user";
+	// private $password = "-M*NDuq+Yc~=3=\9";
+	// private $database = "id20052762_taipingytf";
+	// private $conn;
+
 	private $host = "localhost";
 	private $user = "root";
 	private $password = "";

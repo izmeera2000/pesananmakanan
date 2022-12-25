@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require __DIR__ . '\assets\vendor\autoload.php';
+require __DIR__ . '/assets/vendor/autoload.php';
 require_once("assets/controller/dbcontroller.php");
 $db_handle = new DBController();
 use Mike42\Escpos\Printer;
@@ -44,7 +44,7 @@ try {
 // $date = date('l jS \of F Y h:i:s A');
 
     /* Start the printer */
-    $logo = EscposImage::load("assets\img\awbtlogo.png", false);
+    $logo = EscposImage::load("assets/img/awbtlogo.png", false);
     $printer = new Printer($connector, $profile);
 
 

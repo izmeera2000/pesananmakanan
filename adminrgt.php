@@ -44,7 +44,7 @@ if (isset($_POST['rgt'])) {
   <meta content="" name="description">
   <meta content="" name="keywords">
   <meta name="theme-color" content="#db4938" />
-  <link rel="manifest" href="manifest.json" />
+  <link rel="manifest" href="adminmanifest.json" />
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">

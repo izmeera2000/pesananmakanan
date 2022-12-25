@@ -32,7 +32,7 @@ if (!empty($_POST['tablen'])) {
     <meta content="" name="description">
     <meta content="" name="keywords">
     <meta name="theme-color" content="#db4938" />
-    <link rel="manifest" href="manifest.json" />
+    <link rel="manifest" href="adminmanifest.json" />
 
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
@@ -119,7 +119,7 @@ if (!empty($_POST['tablen'])) {
                             
           </div>
 
-            <form action="adminqr" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+            <form action="adminqr.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
               <div class="row gy-4">
     
                 <select class="my-4" name="tablen" id="tablen" data-aos="fade-up" data-aos-delay="100"
