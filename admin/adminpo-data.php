@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("assets/controller/dbcontroller.php");
+require_once("../assets/controller/dbcontroller.php");
 $db_handle = new DBController();
 
 
@@ -13,7 +13,7 @@ if (!empty($result)) {
 
 
         echo '<div class="swiper-slide event-item d-flex flex-column justify-content-end"';
-        echo 'style="background-image: url(assets/img/payment-systems.jpg)">';
+        echo 'style="background-image: url(../assets/img/payment-systems.webp)">';
         echo '<h3>';
         echo 'Meja ' . $order["tablen"];
         echo '</h3>';

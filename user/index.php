@@ -1,4 +1,4 @@
 <?php 
-    header("location: adminlgn.php");
+    header("location: menu.php");
 
 ?> 

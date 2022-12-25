@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-require __DIR__ . '/assets/vendor/autoload.php';
-require_once("assets/controller/dbcontroller.php");
+require  '../assets/vendor/autoload.php';
+require_once("../assets/controller/dbcontroller.php");
 $db_handle = new DBController();
 use Mike42\Escpos\Printer;
 use Mike42\Escpos\EscposImage;

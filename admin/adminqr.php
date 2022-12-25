@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once("assets/controller/dbcontroller.php");
-include('assets/vendor/phpqrcode/qrlib.php');
+require_once("../assets/controller/dbcontroller.php");
+include('../assets/vendor/phpqrcode/qrlib.php');
 $db_handle = new DBController();
 
 if (!isset($_SESSION['username'])) {
@@ -35,8 +35,8 @@ if (!empty($_POST['tablen'])) {
     <link rel="manifest" href="adminmanifest.json" />
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="../assets/img/favicon.png" rel="icon">
+    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,14 +46,14 @@ if (!empty($_POST['tablen'])) {
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="../assets/css/main.css" rel="stylesheet">
 
     <!-- =======================================================
   * Template Name: Yummy - v1.2.1
@@ -71,7 +71,7 @@ if (!empty($_POST['tablen'])) {
 
             <a  class="logo d-flex align-items-center me-auto me-lg-0">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
-                <!-- <img src="assets/img/logo.png" alt=""> -->
+                <!-- <img src="../assets/img/logo.png" alt=""> -->
                 <h1>Taiping Yong Tau Foo</h1>
             </a>
 
@@ -115,7 +115,7 @@ if (!empty($_POST['tablen'])) {
         <div class="row g-0">
 
         <div class="col-lg-12 mx-auto"  data-aos="zoom-out" data-aos-delay="200">
-          <img src="adminqr-data.php" class="img-fluid mx-auto d-block"   onerror="this.onerror=null;this.src='assets/img/what.png';" >
+          <img src="adminqr-data.php" class="img-fluid mx-auto d-block"   onerror="this.onerror=null;this.src='../assets/img/what.png';" >
                             
           </div>
 
@@ -157,14 +157,14 @@ if (!empty($_POST['tablen'])) {
         <div id="preloader"></div>
 
         <!-- Vendor JS Files -->
-        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/vendor/aos/aos.js"></script>
-        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-        <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/vendor/aos/aos.js"></script>
+        <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+        <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
 
         <!-- Template Main JS File -->
-        <script src="assets/js/main.js"></script>
+        <script src="../assets/js/main.js"></script>
 
 
 </body>

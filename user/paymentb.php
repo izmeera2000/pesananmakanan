@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("assets/controller/dbcontroller.php");
+require_once("../assets/controller/dbcontroller.php");
 $db_handle = new DBController();
 $ref = $_SESSION["ref"];
 
